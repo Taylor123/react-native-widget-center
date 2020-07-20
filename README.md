@@ -1,5 +1,7 @@
 # react-native-widget-center
 
+*Only supports iOS at the moment*
+
 ## Getting started
 
 `$ yarn add react-native-widget-center`
@@ -14,7 +16,7 @@
 ```javascript
 import RNWidgetCenter from 'react-native-widget-center';
 
-// reload specific kind of widget
+// reload specific kind of widget (kind is specified in your WidgetConfiguration)
 RNWidgetCenter.reloadTimelines('my.widget.type');
 
 // reload all widget timelines

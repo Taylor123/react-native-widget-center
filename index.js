@@ -6,13 +6,13 @@ export default class WidgetCenter {
     static widgetCenterSupported = Platform.OS === 'ios' && Platform.Version >= 14;
 
     static reloadTimelines = kind => {
-        if (this.widgetCenterSupported) {
+        if (WidgetCenter.widgetCenterSupported) {
             RNWidgetCenter.reloadTimelines(kind)
         }
     }
 
     static reloadAllTimelines = () => {
-        if (this.widgetCenterSupported) {
+        if (WidgetCenter.widgetCenterSupported) {
             RNWidgetCenter.reloadAllTimelines()
         }
     }
