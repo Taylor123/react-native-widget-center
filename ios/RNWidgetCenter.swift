@@ -18,14 +18,14 @@ class RNWidgetCenter: NSObject {
 	
 	@objc(reloadTimelines:)
 	func reloadTimelines(_ kind: String) {
-		#if arch(arm64) || arch(i386) || arch(x86_64)
+		#if arch(arm64) || arch(x86_64)
 		WidgetCenter.shared.reloadTimelines(ofKind: kind)
 		#endif
 	}
 	
 	@objc(reloadAllTimelines)
 	func reloadAllTimelines() {
-		#if arch(arm64) || arch(i386) || arch(x86_64)
+		#if arch(arm64) || arch(x86_64)
 		WidgetCenter.shared.reloadAllTimelines()
 		#endif
 	}
