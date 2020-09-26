@@ -19,7 +19,7 @@ export default class WidgetCenter {
 
     static getCurrentConfigurations = () => {
         if (WidgetCenter.widgetCenterSupported) {
-            RNWidgetCenter.getCurrentConfigurations()
+            return RNWidgetCenter.getCurrentConfigurations()
         }
     }
 }
