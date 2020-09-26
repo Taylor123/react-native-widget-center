@@ -29,4 +29,24 @@ class RNWidgetCenter: NSObject {
 		WidgetCenter.shared.reloadAllTimelines()
 		#endif
 	}
+
+    @objc(getCurrentConfigurations:reject:)
+    func getCurrentConfigurations (_ resolve: @escaping RCTPromiseResolveBlock, reject: @escaping RCTPromiseRejectBlock) -> Void {
+        #if arch(arm64) || arch(x86_64)
+        WidgetCenter.shared.getCurrentConfigurations {result in
+            switch result {
+            case .success(let widgetInfo):
+                // Serialize widgets config into something the bridge understands
+                // https://reactnative.dev/docs/native-modules-ios#argument-types
+                var res:[[String: String]] = []
+                for widget in widgetInfo {
+                    res.append(["kind": widget.kind, "family": widget.family.description])
+                }
+                resolve(res)
+            case.failure(let error):
+                reject("404", "Couldn't get current widgets configuration", error)
+            }
+        }
+        #endif
+    }
 }

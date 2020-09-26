@@ -6,4 +6,7 @@
 	
 	RCT_EXTERN_METHOD(reloadAllTimelines)
 
+    RCT_EXTERN_METHOD(getCurrentConfigurations:
+    (RCTPromiseResolveBlock)resolve
+    reject:(RCTPromiseRejectBlock)reject)
 @end

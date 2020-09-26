@@ -16,4 +16,10 @@ export default class WidgetCenter {
             RNWidgetCenter.reloadAllTimelines()
         }
     }
+
+    static getCurrentConfigurations = () => {
+        if (WidgetCenter.widgetCenterSupported) {
+            RNWidgetCenter.getCurrentConfigurations()
+        }
+    }
 }
