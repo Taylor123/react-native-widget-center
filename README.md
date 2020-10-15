@@ -1,6 +1,6 @@
 # react-native-widget-center
 
-*Only supports iOS at the moment*
+_Only supports iOS at the moment_
 
 ## Getting started
 
@@ -13,12 +13,18 @@
 - Set WidgetKit.framework Status to Optional
 
 ## Usage
+
 ```javascript
-import RNWidgetCenter from 'react-native-widget-center';
+import RNWidgetCenter from "react-native-widget-center";
 
 // reload specific kind of widget (kind is specified in your WidgetConfiguration)
-RNWidgetCenter.reloadTimelines('my.widget.type');
+RNWidgetCenter.reloadTimelines("my.widget.type");
 
 // reload all widget timelines
 RNWidgetCenter.reloadAllTimelines();
+
+// get installed widgets configuration
+RNWidgetCenter.getCurrentConfigurations().then((result) => {
+  // do something
+});
 ```
