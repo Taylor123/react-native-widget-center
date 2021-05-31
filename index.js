@@ -3,7 +3,7 @@ import { NativeModules, Platform } from 'react-native';
 const { RNWidgetCenter } = NativeModules;
 
 export default class WidgetCenter {
-    static widgetCenterSupported = Platform.OS === 'ios' && Platform.Version >= 14;
+    static widgetCenterSupported = Platform.OS === 'ios' && Platform.Version.split('.')[0] >= 14;
 
     static reloadTimelines = kind => {
         if (WidgetCenter.widgetCenterSupported) {
